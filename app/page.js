@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { fetchWeatherData, WeatherCard } from "@/components/Weather";
 import { Feedback } from "@/components/Feedback";
 import { ModeToggle } from "@/components/Theme-Switcher";
+import Head from 'next/head'
 
 export default function ChatInterface() {
   const [messages, setMessages] = useState([]);
@@ -105,6 +106,9 @@ export default function ChatInterface() {
       className={`flex transition-all duration-300 flex-col min-h-screen 
         bg-white dark:bg-black text-black dark:text-white
         `}>
+        <Head>
+<meta name="google-site-verification" content="Thhmlg0oWUjmtwYP02VM85pBlzxhKNvDsORoJlEJMe8" />
+  </Head>
       {/* Theme Switcher */}
       <ModeToggle />
       <ScrollArea className='flex-1 p-4 py-16 '>
