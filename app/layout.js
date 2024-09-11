@@ -14,29 +14,30 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "MintCode AI | A helpful assistant",
+  title: "MintCode AI | Your Helpful Assistant",
   description:
-    "MintCode AI is a helpful assistant that can answer questions and describe images.",
-  image: "./mintcode-ai.png",
+    "MintCode AI is a next-gen assistant that answers questions, describes images, and helps you stay productive.",
+  image: "https://mintcode-ai.vercel.app/mintcode-ai.png", // Absolute URL for better SEO
   url: "https://mintcode-ai.vercel.app",
   type: "website",
   siteName: "MintCode AI",
   locale: "en_US",
-   keywords: [
-     "mincodeai", "mintcode ai", "Codemint ai", "Ai Chatbot","Nextjs ai", "Github Model ai", "mintcode","vercel ai", "adil sarfraz"
-     ],
+  keywords: [
+    "MintCode AI", "AI chatbot", "AI assistant", "Next.js AI", "Vercel AI", 
+    "Adil Sarfraz AI", "MintCode productivity", "image description AI", "AI model"
+  ],
   openGraph: {
-    title: "MintCode AI | A helpful assistant",
+    title: "MintCode AI | Your Helpful Assistant",
     description:
-      "MintCode AI is a helpful assistant that can answer questions and describe images.",
-         images: [
+      "MintCode AI assists you by answering questions and providing image descriptions with state-of-the-art AI technology.",
+    images: [
       {
-        url: "https://mintcode-ai.vercel.app//mintcode-ai.png",
+        url: "https://mintcode-ai.vercel.app/mintcode-ai.png",
         width: 1200,
         height: 630,
-        alt: "Mintcode Ai"
-      }
-    ]
+        alt: "MintCode AI Assistant Logo", // More descriptive alt text for accessibility
+      },
+    ],
     url: "https://mintcode-ai.vercel.app",
     type: "website",
     siteName: "MintCode AI",
@@ -46,17 +47,17 @@ export const metadata = {
     handle: "@adilsarfr00",
     site: "@adilsarfr00",
     card: "summary_large_image",
-       title: "MintCode AI | A helpful assistant",
+    title: "MintCode AI | Your Helpful Assistant",
     description:
-      "MintCode AI is a helpful assistant that can answer questions and describe images.",
-         images: [
+      "MintCode AI is an innovative assistant that answers questions and describes images using advanced AI models.",
+    images: [
       {
-        url: "https://mintcode-ai.vercel.app//mintcode-ai.png",
+        url: "https://mintcode-ai.vercel.app/mintcode-ai.png",
         width: 1200,
         height: 630,
-        alt: "Mintcode Ai"
-      }
-        ]
+        alt: "MintCode AI Twitter Preview", // SEO-friendly alt text
+      },
+    ],
   },
 };
 
