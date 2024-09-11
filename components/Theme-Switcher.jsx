@@ -10,7 +10,7 @@ export function ModeToggle() {
 
   return (
     <div className='flex justify-end fixed top-4 z-40 right-4'>
-      <Button variant='outline' className="p-2">
+      <Button variant='outline' className="p-2" aria-label="theme-switcher">
         {theme === "light" ? (
           <Sun onClick={() => setTheme("dark")}/>
         ) : (
