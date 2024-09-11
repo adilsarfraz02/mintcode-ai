@@ -15,6 +15,10 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "MintCode AI | Your Helpful Assistant",
+  verification: {
+    google: 'Thhmlg0oWUjmtwYP02VM85pBlzxhKNvDsORoJlEJMe8',
+  },
+    creator: 'Adil Sarfraz',
   description:
     "MintCode AI is a next-gen assistant that answers questions, describes images, and helps you stay productive.",
   image: "https://mintcode-ai.vercel.app/mintcode-ai.png", // Absolute URL for better SEO
@@ -22,9 +26,10 @@ export const metadata = {
   type: "website",
   siteName: "MintCode AI",
   locale: "en_US",
+    category: 'Artifical intelligence',
   keywords: [
-    "MintCode AI", "AI chatbot", "AI assistant", "Next.js AI", "Vercel AI", 
-    "Adil Sarfraz AI", "MintCode productivity", "image description AI", "AI model"
+    "MintCode", "AI chatbot", "AI assistant", "Next.js AI", "Mintcode AI", 
+    "Adil Sarfraz AI", "MintCode", "image description AI", "AI Mintcode"
   ],
   openGraph: {
     title: "MintCode AI | Your Helpful Assistant",
