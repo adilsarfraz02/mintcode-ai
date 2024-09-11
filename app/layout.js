@@ -22,11 +22,21 @@ export const metadata = {
   type: "website",
   siteName: "MintCode AI",
   locale: "en_US",
+   keywords: [
+     "mincodeai", "mintcode ai", "Codemint ai", "Ai Chatbot","Nextjs ai", "Github Model ai", "mintcode","vercel ai", "adil sarfraz"
+     ],
   openGraph: {
     title: "MintCode AI | A helpful assistant",
     description:
       "MintCode AI is a helpful assistant that can answer questions and describe images.",
-    image: "./mintcode-ai.png",
+         images: [
+      {
+        url: "https://mintcode-ai.vercel.app//mintcode-ai.png",
+        width: 1200,
+        height: 630,
+        alt: "Mintcode Ai"
+      }
+    ]
     url: "https://mintcode-ai.vercel.app",
     type: "website",
     siteName: "MintCode AI",
@@ -35,7 +45,18 @@ export const metadata = {
   twitter: {
     handle: "@adilsarfr00",
     site: "@adilsarfr00",
-    cardType: "summary_large_image",
+    card: "summary_large_image",
+       title: "MintCode AI | A helpful assistant",
+    description:
+      "MintCode AI is a helpful assistant that can answer questions and describe images.",
+         images: [
+      {
+        url: "https://mintcode-ai.vercel.app//mintcode-ai.png",
+        width: 1200,
+        height: 630,
+        alt: "Mintcode Ai"
+      }
+        ]
   },
 };
 
