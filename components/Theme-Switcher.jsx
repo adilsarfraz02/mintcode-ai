@@ -1,21 +1,22 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
 
 export function ModeToggle() {
-    const { setTheme,theme } = useTheme()
+  const { setTheme, theme } = useTheme();
 
-    return (
-        <div className="flex justify-end fixed top-4 z-40 right-8">
-            <Button variant="outline">
-                {theme === 'light'
-                    ? <Sun onClick={() => setTheme('dark')}/> : <Moon
-                    onClick={() => setTheme('light')}
-                />}
-            </Button>
-        </div>
-    )
+  return (
+    <div className='flex justify-end fixed top-4 z-40 right-4'>
+      <Button variant='outline' className="p-2">
+        {theme === "light" ? (
+          <Sun onClick={() => setTheme("dark")}/>
+        ) : (
+          <Moon onClick={() => setTheme("light")} />
+        )}
+      </Button>
+    </div>
+  );
 }
