@@ -128,8 +128,8 @@ export default function ChatInterface() {
             <h2 className='text-lg opacity-50'>
               Ask a question or upload an image to get started.
             </h2>
-              <Link href="https://github.com/adilsarfraz02/mintcode-ai/" className="underline">
-                  <Github />
+              <Link href="https://github.com/adilsarfraz02/mintcode-ai/" className="underline opacity-60 hover:opacity-100" aria-label="Follow us on Github">
+                  Follow Us
               </Link>
           </motion.div>
         ) : (
