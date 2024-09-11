@@ -14,13 +14,13 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "MintCode AI | Your Helpful Assistant",
+  title: "MintCode AI | Your Helpful Assistant | A Project of MintCode",
   verification: {
     google: 'Thhmlg0oWUjmtwYP02VM85pBlzxhKNvDsORoJlEJMe8',
   },
     creator: 'Adil Sarfraz',
   description:
-    "MintCode AI is a next-gen assistant that answers questions, describes images, and helps you stay productive.",
+    "MintCode AI is a next assistant that answers question, describe images, and helps you stay productive,You can help us by sending feedback.",
   image: "https://mintcode-ai.vercel.app/mintcode-ai.png", // Absolute URL for better SEO
   url: "https://mintcode-ai.vercel.app",
   type: "website",
