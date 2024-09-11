@@ -17,26 +17,38 @@ export const metadata = {
   title: "MintCode AI | A helpful assistant",
   description:
     "MintCode AI is a helpful assistant that can answer questions and describe images.",
-  image:
-    "https://img.playbook.com/OWvUgCQ3-IG1atVeSvx6_yIzlll-TBxnaXlS5Ih7hEE/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzRhOGI4NTc5/LTc1NmQtNDExOC05/YzJhLTc1MDQwODgy/YzQ2Yw",
+  image: "./mintcode-ai.png",
   url: "https://mintcode-ai.vercel.app",
   type: "website",
   siteName: "MintCode AI",
   locale: "en_US",
+  openGraph: {
+    title: "MintCode AI | A helpful assistant",
+    description:
+      "MintCode AI is a helpful assistant that can answer questions and describe images.",
+    image: "./mintcode-ai.png",
+    url: "https://mintcode-ai.vercel.app",
+    type: "website",
+    siteName: "MintCode AI",
+    locale: "en_US",
+  },
+  twitter: {
+    handle: "@adilsarfr00",
+    site: "@adilsarfr00",
+    cardType: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
+          attribute='class'
+          defaultTheme='system'
           enableSystem
-          disableTransitionOnChange
-        >
+          disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>
