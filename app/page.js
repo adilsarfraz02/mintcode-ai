@@ -13,6 +13,9 @@ import { fetchWeatherData, WeatherCard } from "@/components/Weather";
 import { Feedback } from "@/components/Feedback";
 import { ModeToggle } from "@/components/Theme-Switcher";
 import Head from 'next/head'
+import Link from "next/link"
+import { Github } from 'lucide-react';
+
 
 export default function ChatInterface() {
   const [messages, setMessages] = useState([]);
@@ -122,9 +125,12 @@ export default function ChatInterface() {
             <h1 className='text-4xl font-bold mt-4'>
               Welcome to MintCode AI ✨
             </h1>
-            <p className='text-lg opacity-50'>
+            <h2 className='text-lg opacity-50'>
               Ask a question or upload an image to get started.
-            </p>
+            </h2>
+              <Link href="https://github.com/adilsarfraz02/mintcode-ai/" className="underline">
+                  <Github />
+              </Link>
           </motion.div>
         ) : (
           <motion.div
@@ -258,8 +264,8 @@ export default function ChatInterface() {
         className='fixed top-4 left-4 z-40'>
         <Feedback />
       </motion.div>
-
-      {error && <p className='text-red-500 p-4'>{error}</p>}
+      
+      {error && <p className='text-red-500 p-4 z-!50'>{error}</p>}
     </div>
   );
 }
