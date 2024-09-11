@@ -1,7 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import GoogleAnalytics from "./GoogleAnalytics"
+import GoogleAnalytics from "./GoogleAnalytics";
+import { Toaster } from "react-hot-toast";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -16,9 +17,9 @@ const geistMono = localFont({
 export const metadata = {
   title: "MintCode AI | Your Helpful Assistant | A Project of MintCode",
   verification: {
-    google: 'Thhmlg0oWUjmtwYP02VM85pBlzxhKNvDsORoJlEJMe8',
+    google: "Thhmlg0oWUjmtwYP02VM85pBlzxhKNvDsORoJlEJMe8",
   },
-    creator: 'Adil Sarfraz',
+  creator: "Adil Sarfraz",
   description:
     "MintCode AI is a next assistant that answers question, describe images, and helps you stay productive,You can help us by sending feedback.",
   image: "https://mintcode-ai.vercel.app/mintcode-ai.png", // Absolute URL for better SEO
@@ -26,10 +27,17 @@ export const metadata = {
   type: "website",
   siteName: "MintCode AI",
   locale: "en_US",
-    category: 'Artifical intelligence',
+  category: "Artifical intelligence",
   keywords: [
-    "MintCode", "AI chatbot", "AI assistant", "Next.js AI", "Mintcode AI", 
-    "Adil Sarfraz AI", "MintCode", "image description AI", "AI Mintcode"
+    "MintCode",
+    "AI chatbot",
+    "AI assistant",
+    "Next.js AI",
+    "Mintcode AI",
+    "Adil Sarfraz AI",
+    "MintCode",
+    "image description AI",
+    "AI Mintcode",
   ],
   openGraph: {
     title: "MintCode AI | Your Helpful Assistant",
@@ -68,15 +76,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' role="main">
-          <GoogleAnalytics />
+    <html lang="en" role="main">
+      <GoogleAnalytics />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
+          attribute="class"
+          defaultTheme="system"
           enableSystem
-          disableTransitionOnChange>
+          disableTransitionOnChange
+        >
+          <Toaster className="dark light" />
           {children}
         </ThemeProvider>
       </body>
