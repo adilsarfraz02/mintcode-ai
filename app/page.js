@@ -90,7 +90,7 @@ export default function ChatInterface() {
       setError(error.message);
 
       // Show error toast
-      toast.error("Failed to send the message.", { id: loadingToastId });
+      toast.error("Failed Api Error", { id: loadingToastId });
     } finally {
       setIsLoading(false);
       setImageFile(null);
@@ -136,10 +136,12 @@ export default function ChatInterface() {
             <h2 className="text-lg opacity-50">
               Ask a question or upload an image to get started.
             </h2>
+            <Feedback />
             <Link
               href="https://github.com/adilsarfraz02/mintcode-ai/"
               className="underline opacity-60 hover:opacity-100"
               aria-label="Follow us on Github"
+              target="_blank"
             >
               Follow Us
             </Link>
@@ -267,13 +269,6 @@ export default function ChatInterface() {
           Send
         </Button>
       </motion.form>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="top-0 fixed"
-      >
-        <Feedback />
-      </motion.div>
     </div>
   );
 }
