@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { Camera, CameraOff, Send, UserIcon } from "lucide-react";
+import { Send, UserIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -21,9 +21,7 @@ export default function ChatInterface() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [imageFile, setImageFile] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
-  const fileInputRef = useRef(null);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -43,16 +41,13 @@ export default function ChatInterface() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation: if no input or image, show error toast
-    if (!input && !imageFile) {
-      toast.error("Please enter a message or upload an image.");
+    // Validation: if no input, show error toast
+    if (!input) {
+      toast.error("Please enter a message.");
       return;
     }
 
     const newMessage = { role: "user", content: input };
-    if (imageFile) {
-      newMessage.image = URL.createObjectURL(imageFile);
-    }
 
     setMessages((prevMessages) => [...prevMessages, newMessage]);
     setInput("");
@@ -64,9 +59,6 @@ export default function ChatInterface() {
     try {
       const formData = new FormData();
       formData.append("prompt", input);
-      if (imageFile) {
-        formData.append("image", imageFile);
-      }
       formData.append("messageHistory", JSON.stringify(messages));
 
       const response = await fetch("/api/gpt4", {
@@ -93,29 +85,7 @@ export default function ChatInterface() {
       toast.error("Failed Api Error", { id: loadingToastId });
     } finally {
       setIsLoading(false);
-      setImageFile(null);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
     }
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file && file.type.startsWith("image/")) {
-      setImageFile(file);
-    } else {
-      setError("Please select a valid image file.");
-      toast.error("Please select a valid image file.");
-    }
-  };
-
-  const handleRemoveImage = () => {
-    setImageFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-    toast.success("Image removed.");
   };
 
   return (
@@ -134,7 +104,7 @@ export default function ChatInterface() {
               Welcome to MintCode AI ✨
             </h1>
             <h2 className="text-lg opacity-50">
-              Ask a question or upload an image to get started.
+              Ask a question to get started.
             </h2>
             <Feedback />
             <Link
@@ -184,13 +154,6 @@ export default function ChatInterface() {
                       {message.role === "user" ? <UserIcon /> : <GrUserAdmin />}
                     </div>
                     <div className="space-y-2">
-                      {message.image && (
-                        <img
-                          src={message.image}
-                          alt="Uploaded"
-                          className="rounded-lg max-w-1/2 h-60 mb-2"
-                        />
-                      )}
                       <p className={`px-0`}>{message.content}</p>
                     </div>
                   </div>
@@ -234,32 +197,6 @@ export default function ChatInterface() {
           placeholder="Type your message here..."
           className="flex-1 mr-2"
         />
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          hidden
-        />
-        {imageFile ? (
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleRemoveImage}
-            className="flex items-center justify-center p-2 gap-2 mr-2"
-          >
-            <CameraOff className="w-4 h-4" /> Remove Image
-          </Button>
-        ) : (
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => fileInputRef.current.click()}
-            className="flex items-center justify-center p-2 gap-2 mr-2"
-          >
-            <Camera className="w-4 h-4" />
-          </Button>
-        )}
         <Button
           type="submit"
           className="flex items-center justify-center p-2 gap-2"
