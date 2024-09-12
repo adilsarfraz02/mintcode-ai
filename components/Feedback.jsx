@@ -25,7 +25,7 @@ const feedback = [
 
 // Hook for feedback submission
 const useSubmitFeedback = () => {
-  const [feedback, setFeedback] = useState(null);
+  const [feedback, setFeedback] = useState("");
   const [isLoading, setLoadingState] = useState(false);
   const [isSent, setRequestState] = useState(false);
   const submitFeedback = async (feedback) => {
@@ -87,11 +87,8 @@ export const Feedback = () => {
 
   // Reset textarea when happiness changes
   useEffect(() => {
-    if (!happiness && textRef.current) {
-      textRef.current.value = "";
-    }
-    if (textRef.current.value = "") {
-      
+    if (!happiness && textRef?.current) {
+      textRef?.current?.value = "";
     }
   }, [happiness]);
 
