@@ -84,11 +84,11 @@ export const Feedback = () => {
   const { submitFeedback, isLoading, isSent } = useSubmitFeedback();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    if (!happiness && textRef?.current) {
-      textRef?.current?.value = "";
-    }
-  }, [happiness]);
+useEffect(() => {
+  if (!happiness && textRef.current) {
+    textRef.current.value = "";
+  }
+}, [happiness]);
 
   useEffect(() => {
     let timeout = null;
