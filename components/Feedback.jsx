@@ -207,16 +207,13 @@ export const Feedback = () => {
                         />
                         <div className="flex h-fit w-full justify-end">
                           <Button
-                            onClick={() => {
-                              if (!textRef.current.value.trim()) {
-                                toast.error("Enter a message - Empty/?");
-                                return;
-                              }
-                              submitFeedback(
-                                happiness,
-                                textRef.current.value
-                              );
-                            }}
+ onClick={() => {
+    if (textRef.current && !textRef.current.value.trim()) {
+      toast.error("Enter a message - Empty/?");
+      return;
+    }
+    submitFeedback(happiness, textRef.current?.value);
+  }}
                             className={cn(
                               "mt-1 flex h-9 items-center justify-center rounded-md border bg-neutral-950 px-2 text-sm text-white dark:bg-white dark:text-neutral-950",
                               {
