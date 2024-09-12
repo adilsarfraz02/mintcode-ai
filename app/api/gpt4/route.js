@@ -6,11 +6,6 @@ const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
 const chatModel = "gpt-4o-mini";  // Or your preferred chat model
 const visionModel = "gpt-4o-mini";
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
 
 export async function POST(req) {
     try {
