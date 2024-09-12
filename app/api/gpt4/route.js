@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 import Groq from "groq-sdk";
 
 // Initialize Groq client
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 export async function POST(req) {
     try {
+        const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
         const formData = await req.formData();
         const prompt = formData.get('prompt');
         const messageHistory = JSON.parse(formData.get('messageHistory') || '[]');
