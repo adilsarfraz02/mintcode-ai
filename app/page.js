@@ -111,7 +111,7 @@ export default function ChatInterface() {
   };
 
   return (
-    <div className='flex flex-col min-h-screen bg-white dark:bg-black text-black dark:text-white'>
+    <div className='flex flex-col min-h-screen overflow-auto bg-white dark:bg-black text-black dark:text-white'>
       <ModeToggle />
       <ScrollArea className='flex-1 p-4 py-16'>
         {messages.length === 0 ? (
